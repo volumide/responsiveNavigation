@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700;900&display=swap');
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: 'Roboto', sans-serif;
+	font-weight:500;
+	font-size: .9rem;
+	line-height: 1.5;
+}
+
+.menu .menu-button{
+	display: none;
+}
+
+.nav{
+	padding: 0 100px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background: rgb(255, 255, 255);
+}
+
+ul{
+	opacity: 1;
+	display: flex;
+	list-style: none;
+	height: 100%;
+}
+
+ul li .link{
+	display: block;
+	padding: 20px 20px;
+	text-decoration: none;
+	color: #000;
+	position: relative;
+}
+
+.nav .link:hover::after, .nav .link.active::after{
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 2px;
+	background: #A64686;
+	bottom: 0;
+	left: 0;
+} 
+
+
+
+.close-button{
+	display: none;
+}
+
+
+@media(max-width:801px){
+	.nav{
+		padding: 10px 20px;
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.nav ul{
+		display: initial;
+		position: absolute;
+		left: 0;
+		top: 0;
+		height: 100vh;
+		width: 100%;
+		background: rgb(109, 106, 106);
+		text-align: center;
+		transition: all .3s ease;
+	}
+
+	.nav li{
+		display: block;
+		padding: 5px;
+		margin-top: 20px;
+	}
+
+	.nav .link{
+		display: initial;
+	}
+	
+
+	.close-button{
+		display: block;
+		position: absolute;
+		bottom: 20px;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 70%;
+		border-radius: 10px;
+		padding: 20px;
+		background: #fff;
+	}
+
+	.close{
+		opacity: 0;
+		pointer-events: none;
+	}
+	
+	.open{
+		opacity: 1;
+		pointer-events: all;
+	}
+	
+	.menu{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.menu .menu-button{
+		display: initial;
+		padding: 5px 10px;
+		border: solid 1px rgba(0, 0, 0, .3);
+		border-radius: 3px;
+	}
+
+	.menu h3{
+		padding: 0 10px;
+	}
+}
